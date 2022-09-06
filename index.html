@@ -39,6 +39,8 @@
         <p>Berkenalan dengan <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
       </div>
 
+    <div id="fadingImage" class="image-styled"></div>
+    
     <p class="paragraf">
         Saya adalah seorang Mahasiswa dari salah satu kampus di Tanah Parahyangan yang selalu memiliki semangat untuk belajar hal baru.
         Saya merupakan mahasiswa kelas D4-IT 3A yang berasal dari Politeknik Negeri Bandung. Saya sedang menempuh semester 5.
@@ -62,7 +64,7 @@
         Sebagai seseorang yang tertarik pada bidang transportasi, saya ingin mengunjungi berbagai kota-kota besar dan tempat yang tersembunyi di seluruh Indonesia. Saya ingin mengembangkan
         dan membagikan pengalaman saya ke orang banyak setelah mengunjungi tempat-tempat tersebut.
     </p>
-
+    
     <h1 class="posisi"> Cita-cita </h1>
     <p class="paragraf">
         Dulu, saat saya berada di tingkat Sekolah Dasar, saya ingin menjadi seorang Masinis. Saat SMP, saya ingin menjadi pegawai di PT. Kereta Api Indonesia. Saat SMA, saya ingin menjadi seorang
@@ -148,6 +150,23 @@ function erase() {
     setTimeout(type, typingDelay + 1100);
   }
 }
+
+const imageEl = document.getElementById("fadingImage");
+const images = [
+  "https://instagram.fcgk4-5.fna.fbcdn.net/v/t51.2885-15/301014441_1003971483632683_2898749478093090270_n.webp?stp=dst-jpg_e35&_nc_ht=instagram.fcgk4-5.fna.fbcdn.net&_nc_cat=107&_nc_ohc=7Xb4Vrw1zaAAX-EkDHn&tn=YWKLmpa7XnJuGviQ&edm=ALQROFkBAAAA&ccb=7-5&ig_cache_key=MjkxMTEyNTg3MDU0MzE4NzI0Ng%3D%3D.2-ccb7-5&oh=00_AT-ExFPqKtyeQVV8PBye3JaC22kPoNzgGaY8J4dWFhqEMA&oe=631CFD4D&_nc_sid=30a2ef",
+  "https://images.unsplash.com/photo-1588250318414-908688966feb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2089&q=80",
+  "https://images.unsplash.com/photo-1524077410193-2f667f9ab09a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80"
+];
+
+window.setInterval(changePicture, 5000);
+let i = 0;
+function changePicture() {
+  i++;
+  if (i > images.length - 1) i = 0;
+  imageEl.style.backgroundImage = `url(${images[i]})`;
+}
+
+    
 
 /* DOM Js. */
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
